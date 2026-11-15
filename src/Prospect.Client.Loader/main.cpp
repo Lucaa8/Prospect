@@ -428,9 +428,12 @@ bool Patch(const wchar_t* processName) {
     if (!Inject(hProcess, L"Prospect.Agent.dll")) {
         return false;
     }
-    if (!Inject(hProcess, L"UE4SS.dll")) {
+    
+	// UE4SS.dll is in subfolder "ue4ss" in newer versions so path should be uptated to "Lue4ss\\UE4SS.dll".
+    // But newer versions of ue4ss are including a custom "dwapi.dll" which loads the ue4ss dll automatically.
+    /*if (!Inject(hProcess, L"UE4SS.dll")) {
         return false;
-    }
+    }*/
 
     uintptr_t imageBase;
     // Wait a bit for PE image to load

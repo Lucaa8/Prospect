@@ -1,0 +1,4 @@
+!dependencies/lua/lua54.lib
+!dependencies/lua/lua54.dll
+!dependencies/discord/lib/x86_64/discord_game_sdk.dll.lib
+!dependencies/discord/lib/x86_64/discord_game_sdk.dll

@@ -12,6 +12,16 @@
 #include <cctype>
 #include <locale>
 
+// This exported function can be called from Lua script to skip the intro movie of the cycle frontier
+#include "Intro.h"
+struct lua_State;
+extern "C" __declspec(dllexport) int SkipIntro(lua_State* L)
+{
+	logger::Print("[Agent] SkipIntro called from Lua\n");
+    RequestIntroSkip();
+    return 0;
+}
+
 std::wstring g_backendUrl;
 
 // trim from start (in place)
